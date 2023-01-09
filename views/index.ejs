@@ -22,8 +22,17 @@
     </form>
 
     <ul>
+      <% itemList.forEach( item => { %>  
+       <li>
+       <div><%= item.textinput %> </div>
+       <div><%= item.numtinput %> </div>
+       <a href="">Edit</a>
+       <a href="">Remove</a>
 
-        <!-- add EJS -->
+       </li>
+    
+    <% })
+       
     </ul>
     
 </body>

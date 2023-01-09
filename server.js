@@ -4,7 +4,15 @@ const PORT = 8000
 const mongoose = require('mongoose');
 
 
+//*Import functions/routes
+const connectDB = require("./config/database")
+//const homeRoutes = require("./routes/home")
+//const editRoutes = require("./routes/edit")
 
+require('dotenv').config({path: './config/.env'})
+
+//todo - Connect to Database
+connectDB()
 
 
 //set middleware

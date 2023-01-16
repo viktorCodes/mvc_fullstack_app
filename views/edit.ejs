@@ -13,9 +13,9 @@
      <section>
          <ul>
             <% itemList.forEach( item => { %>  
-             <% if (clicked item == item in list)
+             <% if (item._id == idItem) { %>
                <li>
-                <form action="/edit/update/<%=item._id%>" method="POST">
+                <form action="/edit/update/<%= item._id%>" method="POST">
                     <label for="textinput">Input Text: </label>
                    <input type="text" name="textinput" value="<%=item.textinput%>">
                    <label for="numinput">Input Number: </label>
@@ -27,6 +27,17 @@
                </form>
 
                </li>
+
+                 <% }  else { %>
+
+                    <li>
+                        <div><%= item.textinput %> </div>
+                        <div><%= item.numtinput %> </div>
+                        <a href="/edit/<%= item._id %>">Edit</a>
+                        <a href="/edit/remove/<%= item._id %>">Remove</a>
+                 
+                   </li>
+                   <% } %>
 
                 <% }) %>
 

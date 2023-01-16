@@ -4,36 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>fullsatckMVCapp</title>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-
-    <h1>HomePage for MVC review</h1>
-
+    <h1>This is the Home Page!</h1>
     <form action="/new" method="POST">
-         <label for="textinput">Input Text: </label>
+        <label for="textinput">Input Text</label>
         <input type="text" name="textinput">
-        <label for="numinput">Input Number: </label>
-        <input type="number" name="numinput" value= 0>
-        <button type="submit">Add Item</button>
-
-
+        <br>
+        <label for="numinput">Input Number</label>
+        <input type="number" name="numinput" value=0>
+        <br>
+        <button type="submit">Add item</button>
     </form>
-
     <ul>
-      <% itemList.forEach( item => { %>  
-       <li>
-       <div><%= item.textinput %> </div>
-       <div><%= item.numtinput %> </div>
-       <a href="/edit/<%= item._id %>">Edit</a>
-       <a href="/edit/remove/<%= item._id %>">Remove</a>
-
-       </li>
-    
-    <% }) %>
-       
+        <% itemList.forEach(item => { %>
+            <li>
+                <div><%= item.textinput %></div>
+                <div><%= item.numinput %></div>
+                <a href="/edit/<%= item._id %>">Edit</a>
+                <a href="/edit/remove/<%= item._id %>">Remove</a>
+            </li>
+        <% }) %>
     </ul>
-    
 </body>
 </html>
